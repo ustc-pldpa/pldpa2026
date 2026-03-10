@@ -1,6 +1,6 @@
-# USTC _Principles and Techniques of Compiler(H)_ 2025 course homepage
+# USTC _Program Language Design and Program Analysis_ 2026 course homepage
 
-Homepage link: <https://ustc-compiler.github.io/2025fall>
+Homepage link: <https://ustc-pldpa.github.io/2026fall>
 
 This README is a toturial of how to write and preview the docs.
 

@@ -20,7 +20,7 @@ jobs:
   deploy:
     needs: check
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'ustc-compiler/2025fall'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'ustc-pldpa/pldpa2026'
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
