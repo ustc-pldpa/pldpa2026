@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta
+      content="Programming Language Design and Program Analysis"
+      name="description"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" type="text/css" href="../base.css" />
+    <title>Programming Language Design and Program Analysis</title>
+  </head>
+  <body>
+    <div id="banner">
+      <h1>Programming Language Design and Program Analysis</h1>
+      <p>Graduate Course, Spring 2026, maintained by Yu Zhang</p>
+    </div>
+
+    <div id="content">
+      <p>
+        <a href="#personnel">Course personnel</a> |
+        <a href="#book">Textbooks</a> | <a href="#reading">Readings</a> |
+        <a href="#schedule">Schedule</a> | <a href="#link">Links</a>
+      </p>
+      <h4><a name="personnel"></a>Course personnel</h4>
+      <table border="1" cellpadding="0">
+        <tr>
+          <td>Instructor</td>
+          <!--td>Phone </td-->
+          <td>Email</td>
+          <td>Course Time</td>
+          <td>Place</td>
+        </tr>
+        <tr>
+          <td>Yu Zhang</td>
+          <!--td>63603804</td-->
+          <td>yuzhang at ustc.edu.cn</td>
+          <td>Tuesday 9:45~12:10</td>
+          <td>GT-B203</td>
+        </tr>
+      </table>
+
+      <h4>
+        <a href="https://github.com/ustc-pldpa/">GitHub for Code</a> and
+        <a href="https://github.com/ustc-pldpa/2021s/issues">Issues</a>
+      </h4>
+      <h4>
+        <a href="https://github.com/S4Plus/ABC/tree/master/oneAPI"
+          >Heterogeneous Computing and oneAPI related resources</a
+        >
+      </h4>
+      <!-- <h4>
+        <a href="last/index.html" target="_blank">Last year's Schedule</a>
+      </h4> -->
+
+      <h3><a name="schedule"></a>Schedule</h3>
+      <!--h4>Final Exam</h4> 
+<font color="red">C601, 14:00-16:00 Jun.18,2021</font>
+
+<li><font color="red">Jun 2</font>: 
+	oneAPI lecture by Dr. Jie Lin from Intel  
+	<br>HW3 ( <a href="http://users-cs.au.dk/amoeller/spa/">SPA</a> Exercises 9.3, 10.2
+<li><font color="red">Apr.21</font>: 
+	Heterogeneous Computing II<a href="notes/B12HComp2.pdf"><image src="../image/pdf-16.gif"/></a>, <a href="https://simplecore-ger.intel.com/techdecoded/wp-content/uploads/sites/11/Webinar-Slides-DPC-Part-1-An-Introduction-to-the-New-Programming-Model-.pdf">Introducing Data Parallel C++: A Standards-based, Cross-Architecture Programming Language</a> (<a href="https://techdecoded.intel.io/essentials/dpc-part-1-an-introduction-to-the-new-programming-model/#gs.za2wzq">video</a>)
+	<br><a href="http://cs448h.stanford.edu/2015-10-20-halide.pdf">Halide</a>,
+	<a href="http://www.cs.sjsu.edu/~austin/cs252-fall17/slides/CS252-Day18-Macros.pdf">Macros</a>
+<li><font color="red">Apr.14</font>: 
+	Heterogeneous Computing<a href="notes/B11HComp.pdf"><image src="../image/pdf-16.gif"/></a>, <a href="https://llvm.org/devmtg/2019-04/slides/TechTalk-Savonichev-SYCL_compiler.pdf">SYCL compiler:zero-cost abstraction and type safety for heterogeneous</a> (April 2019),
+	<a href="https://www.khronos.org/assets/uploads/apis/OpenCL-3.0-Launch-Apr20.pdf">OpenCL 3</a>, <a href="https://www.khronos.org/assets/uploads/developers/presentations/SYCL-2020-Launch-Feb21.pdf">SYCL</a>, <a href="https://www.khronos.org/assets/uploads/developers/library/2020-embedded-world-conference/Embedded%20World%20Feb20.pdf">APIs for Accelerating Embedded Vision and Inferencing: Industry Overview of Options and Trade-offs</a>
+	<br><a href="https://github.com/S4Plus/ABC/tree/master/oneAPI/DevCloud/SampleTest">DPC++ code sample analysis</a> by Shunhong Wang
+-->
+      <h4><a name="parta"></a>Part B: Program Analysis</h4>
+      <ul>
+        <!--li><font color="red">May 30</font>: 
+	Pointer Analysis <a href="last/notes/A9PointerAnalysis.pdf"><image src="../image/pdf-16.gif"/></a>,
+	Abstract Interpretation <a href="last/notes/A10AbstractInterp.pdf"><image src="../image/pdf-16.gif"/></a>
+<li><font color="red">May 23</font>:
+	Control Flow Analysis	<a href="last/notes/A8CFA.pdf"><image src="../image/pdf-16.gif"/></a>
+	(<a href="https://www.bilibili.com/video/BV1s34y1b7g6?spm_id_from=333.999.0.0">video</a>, <a href="https://link.springer.com/chapter/10.1007/3-540-45309-1_17">ESOP2001-Control-Flow Analysis in Cubic Time</a>),
+	Pointer Analysis <a href="last/notes/A9PointerAnalysis.pdf"><image src="../image/pdf-16.gif"/></a>
+	(video: <a href="https://www.bilibili.com/video/BV1CZ4y1U7M8/">1</a>,
+	<a href="https://www.bilibili.com/video/BV1Ma411i7en/">2</a>) 
+<li><font color="red">May 16</font>:
+	oneAPI by Peng Zhao (<a href="http://cs.ustc.edu.cn/2023/0512/c14893a602109/page.htm">poster</a>, 
+	  slides<a href="notes/zhao-oneAPI.pdf"><image src="../image/pdf-16.gif"/></a>, 
+	  <a href="notes/zhao-HW.pdf">Homework</a>)
+	oneDNN Graph API and Compiler by Jianhui Li (<a href="http://cs.ustc.edu.cn/2023/0512/c14893a602110/page.htm">poster</a>, 
+	  <a href="https://arxiv.org/abs/2301.01333">paper</a>, 
+	  slides<a href="notes/li-oneDNNGraph.pdf"><image src="../image/pdf-16.gif"/></a>) -->
+        <!-- <li>
+          <font color="red">Dec. 12</font>: Abstract Interpretation
+          <a href="notes/B12AbstractInterp.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          <font color="red">Dec. 5</font>: Pointer Analysis
+          <a href="notes/B11PointerAnalysis.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          (video: <a href="https://www.bilibili.com/video/BV1CZ4y1U7M8/">1</a>,
+          <a href="https://www.bilibili.com/video/BV1Ma411i7en/">2</a>)
+        </li>
+
+        <li>
+          <font color="red">Nov. 28</font>: Interprocedural Analysis
+          <a href="notes/B9IPA.pdf"><image src="../image/pdf-16.gif" /></a> (<a
+            href="https://www.bilibili.com/video/BV1sY4y1s7ei?spm_id_from=333.999.0.0"
+            >video</a
+          >), Control Flow Analysis
+          <a href="notes/B10CFA.pdf"><image src="../image/pdf-16.gif" /></a>(<a
+            href="https://www.bilibili.com/video/BV1s34y1b7g6?spm_id_from=333.999.0.0"
+            >video</a
+          >,
+          <a href="https://link.springer.com/chapter/10.1007/3-540-45309-1_17"
+            >ESOP2001-Control-Flow Analysis in Cubic Time</a
+          >)
+        </li>
+
+        <li>
+          <font color="red">Nov. 21</font>: Widening and Narrowing
+          <a href="notes/B7WideningNarrowing.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          (<a
+            href="https://www.bilibili.com/video/BV1jR4y1F7ER?spm_id_from=333.999.0.0"
+            >video</a
+          >), Path Sensitivity
+          <a href="notes/B8PathSensitivity.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          (<a
+            href="https://www.bilibili.com/video/BV1uZ4y1676s?spm_id_from=333.999.0.0"
+            >video</a
+          >), Discussion
+        </li>
+
+        <li>
+          <font color="red">Nov.14</font>: Type Analysis
+          <a href="notes/B4TypeAnalysis.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, The unification solver and Lattices<a
+            href="notes/B5LatticesFixpoints.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, Examples of Flow Sensitive Analyses
+          <a href="notes/B6FlowSensitiveAnalyses.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, <br />HW4 ( <a href="http://users-cs.au.dk/amoeller/spa/">SPA</a> )
+          Exercises 4.2, 4.6, 4.16, 4.29, 4.30, 6.8
+        </li>
+
+        <li>
+          <font color="red">Nov.7</font>: Why Program Analysis
+          <a href="notes/B2WhyPA.pdf"><image src="../image/pdf-16.gif" /></a>,
+          TIP <a href="notes/B3TIP.pdf"><image src="../image/pdf-16.gif" /></a>,
+          Type Analysis
+          <a href="notes/B4TypeAnalysis.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          (<a href="https://github.com/cs-au-dk/TIP">TIP-GitHub</a>,
+          <a href="https://github.com/matthewbdwyer/tipc">tipc</a>,
+          <a href="https://github.com/matthewbdwyer/tipc-passes">tipc-passes</a
+          >)
+        </li>
+
+        <li>
+          <font color="red">Oct.31</font>: AST & CFG & Dataflow Analysis
+          <a href="notes/B1dataflow.pdf"><image src="../image/pdf-16.gif" /></a>
+        </li> -->
+      </ul>
+
+      <h4>
+        <a name="partb"></a>Part A: Programming Language Design and Semantics
+      </h4>
+      <ul>
+        <!-- <li>
+          <font color="red">Oct.31</font>: Subtyping
+          <a href="notes/A11subtyping.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          <font color="red">Oct.24</font>: Control Flow
+          <a href="notes/A8controlflow.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, Polymorphisms
+          <a href="notes/A9polymorphisms.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, Overloading and Type Classes
+          <a href="notes/A10overload.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          <font color="red">Oct.17</font>: Memory Management
+          <a href="notes/A6memory.pdf"><image src="../image/pdf-16.gif" /></a>,
+          Recursion
+          <a href="notes/A7recursion.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          <font color="red">Oct.11</font>: Scope
+          <a href="notes/A4scope.pdf"><image src="../image/pdf-16.gif" /></a>,
+          Embedding
+          <a href="notes/A5embedding.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          (<a
+            href="https://github.com/ustc-pldpa/2018s/tree/master/code/embedding"
+            >code</a
+          >, <a href="https://github.com/S4Plus/pyceac">PyCEAC</a>,
+          <a href="https://github.com/S4Plus/PyScan">PyScan</a>,
+          <a href="https://github.com/S4Plus/PyCType">PyCType</a>), Memory
+          Management
+          <a href="notes/A6memory.pdf"><image src="../image/pdf-16.gif" /></a>
+        </li>
+
+        <li>
+          <font color="red">Sept.26</font>: Lua
+          <a href="notes/A3lua.pdf"><image src="../image/pdf-16.gif" /></a>,
+          Scope
+          <a href="notes/A4scope.pdf"><image src="../image/pdf-16.gif" /></a>
+        </li>
+
+        <li>
+          <font color="red">Sept.19</font>: More on Lambda calculus<a
+            href="notes/A1lambda.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, Statics and Dynamics
+          <a href="notes/A2StaticsDynamics.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+          [<a href="http://www.cs.cmu.edu/~rwh/pfpl/2nded.pdf">PFPL</a>],
+          <a
+            href="https://github.com/ustc-pldpa/2018s/blob/master/code/interpreter.ml"
+            >interpreter.ml</a
+          >
+        </li> -->
+
+        <li>
+          <font color="red">Mar.10</font>: Course Info
+          <a href="notes/0CourseInfo.pdf"><image src="../image/pdf-16.gif" /></a
+          >, Fundamentals (Formal Semantics)<a href="notes/A1fundamentals.pdf"
+            ><image src="../image/pdf-16.gif" /></a
+          >, More on Lambda calculus (P1-26)<a href="notes/A1lambda.pdf"
+            ><image src="../image/pdf-16.gif"
+          /></a>
+        </li>
+      </ul>
+
+      <h4><a name="book"></a>Textbooks</h4>
+      <ul>
+        <li>
+          [<a name="ppa">PPA</a>] Flemming Nielson et al.
+          <a href="http://www.imm.dtu.dk/~hrni/PPA/ppa.html"
+            >Principles of Program Analysis</a
+          >
+          (2nd Edition). Springer, 2005.
+        </li>
+
+        <li>
+          [<a name="spa">SPA</a>]
+          <a href="http://cs.au.dk/~amoeller/">Anders M&oslash;ller</a> and
+          <a href="http://cs.au.dk/~mis/">Michael I. Schwartzbach</a>. Lecture
+          notes on
+          <a href="http://users-cs.au.dk/amoeller/spa/"
+            >Static Program Analysis</a
+          >, June 2024. <br />
+        </li>
+
+        <li>
+          [<a name="pfpl">PFPL</a>]
+          <a href="http://www.cs.cmu.edu/~rwh">Robert Harper</a>.
+          <a href="http://www.cs.cmu.edu/~rwh/pfpl/"
+            >Practical Foundations for Programming Languages</a
+          >. 2nd Edition, Cambridge University Press, 2016.
+          <a href="http://www.cs.cmu.edu/~rwh/pfpl/abbrev.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+          <!--li>[<a name="tpl">TPL</a>]<a href="http://staff.ustc.edu.cn/~yiyun">³ÂÒâÔÆ</a>¡¢ÕÅêÅ. 
+			³ÌÐòÉè¼ÆÓïÑÔÀíÂÛ£¨µÚ2°æ£©.¸ßµÈ½ÌÓý³ö°æÉç, 2010.
+			<br><br-->
+        </li>
+
+        <li>
+          [<a name="tapl">TAPL</a>]
+          <a href="http://www.cis.upenn.edu/~bcpierce">B. C. Pierce</a>.
+          <a href="http://www.cis.upenn.edu/~bcpierce/tapl/index.html"
+            >Types and Programming Languages</a
+          >. MIT Press, 2002. <br /><a
+            href="http://www.seas.upenn.edu/~cis500/cis500-f07/index.html"
+            >CIS 500: Software Foundations - Fall 2007</a
+          >
+          <!--br>ÂíÊÀÁúµÈÒë. 
+			<a href="http://www.china-pub.com/computers/common/info.asp?id=24942">ÀàÐÍºÍ³ÌÐòÉè¼ÆÓïÑÔ</a>.µç×Ó¹¤Òµ³ö°æÉç£¬2005. -->
+        </li>
+
+        <li>
+          <a href="http://theory.stanford.edu/people/jcm/">John C. Mitchell</a>.
+          <a href="http://theory.stanford.edu/people/jcm/books.html"
+            >Foundations for Programming Languages</a
+          >. MIT Press, 1996.
+          <!--br>ÐíÂúÎäµÈÒë. 
+			<a href="http://www.china-pub.com/computers/common/info.asp?id=32862">³ÌÐòÉè¼ÆÓïÑÔÀíÂÛ»ù´¡</a>.µç×Ó¹¤Òµ³ö°æÉç£¬2006. -->
+          <br />
+        </li>
+
+        <li>
+          <a href="http://www.cis.upenn.edu/~bcpierce">B. C. Pierce</a>.
+          <a href="http://www.cis.upenn.edu/~bcpierce/attapl/index.html"
+            >Advanced Topics in Types and Programming Languages</a
+          >. MIT Press, 2005.
+        </li>
+      </ul>
+
+      <h4><a name="reading"></a>Supplementary Readings</h4>
+      <ul>
+        <li>
+          HOPL: History of Programming Languages:
+          <a href="https://dl.acm.org/doi/book/10.1145/800025">I</a>(1979),
+          <a href="https://dl.acm.org/doi/proceedings/10.1145/154766">II</a
+          >(1993),
+          <a href="https://dl.acm.org/doi/proceedings/10.1145/1238844">III</a
+          >(2007),
+          <a href="https://dl.acm.org/toc/pacmpl/2020/4/HOPL">IV(2020)</a>
+        </li>
+        <li>
+          C.A.R. Hoare.
+          <a
+            href="http://www.cs.berkeley.edu/~necula/cs263/handouts/hoarehints.pdf"
+          >
+            Hints on programming language design</a
+          >. Stanford University. Technical Report: CS-TR-73-403. 1973.
+          <a href="reading/hoare73.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          Niklaus Wirth(Pascal).
+          <a
+            href="http://www.cs.berkeley.edu/~necula/cs263/handouts/PLHistoryGoodDesign.PDF"
+          >
+            On the Design of Programming Languages</a
+          >. Information Processing. 74, pages 386-393, New York, N.Y., 1974.
+          North-Holland Publishing Co.
+          <a href="reading/wirth74.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          Peter Wegner.
+          <a
+            href="http://www.cs.berkeley.edu/~necula/cs263/handouts/PLHistoryDesign25yrs.PDF"
+          >
+            Programming languages - the first 25 years</a
+          >. IEEE Transactions on Computers, Vol. C-25, No. 12, pp. 1207-1225,
+          1976.
+          <a href="reading/wegner76.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          Guy L. Steele.
+          <a href="http://www.cs.virginia.edu/~evans/cs655/readings/steele.pdf">
+            Growing a Language</a
+          >. OOPSLA 1998 Keynote.
+          <a href="reading/steele98.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+          <br />
+        </li>
+
+        <li>
+          C.A.R. Hoare.
+          <a
+            href="http://ls14-www.cs.uni-dortmund.de/ls14Medien/Dokumente/Lehre/PaperdesMonats/hoare.pdf"
+          >
+            An axiomatic basis for computer programming</a
+          >. CACM 12(10), 1969, pages 576 - 580.
+          <a href="reading/hoare69.pdf">
+            <img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          Leslie Lamport.
+          <a
+            href="http://research.microsoft.com/users/lamport/pubs/future-of-computing.pdf"
+          >
+            The Future of Computing: Logic or Biology</a
+          >.
+          <a href="reading/lamport03.pdf"
+            ><img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+        </li>
+
+        <li>
+          Philip Wadler.
+          <a href="http://homepages.inf.ed.ac.uk/wadler/papers/frege/frege.pdf">
+            Proofs are Programs: 19th Century Logic and 21st Century
+            Computing</a
+          >. June 2000, updated November 2000.
+          <a href="reading/walder00.pdf">
+            <img alt=".pdf" src="../image/pdf-16.gif"
+          /></a>
+          <!--	<li>Lectures on the Curry-Howard Isomorphism. M. H. S&oslash;rensen and P. Urzyczyn.
+			<a href="ch.ps"><img alt=".pdf" src="../images/ps-16.gif" /></a>
+		</li>
+		<li>Jean-Yves Girard, Yves Lafont and Paul Taylor. Proofs and Types. 1990. 
+			<a href="prot.pdf"><img alt=".pdf" src="../images/pdf-16.gif" /></a>
+		</li-->
+        </li>
+
+        <li>......</li>
+      </ul>
+
+      <h4><a name="schedule"></a>Schedule</h4>
+
+      <h4><a name="link"></a>Links</h4>
+      <ul>
+        <li>
+          <a href="http://s4plus.ustc.edu.cn"
+            >System Software and Software Security Group, USTC</a
+          >
+        </li>
+        <li>
+          <a href="http://www.eecs.ucf.edu/~leavens/teaching-prog-lang/"
+            >The Teaching About Programming Languages Project</a
+          >
+        </li>
+        <li>
+          <a href="http://www.acm.org/sigplan/">ACM SIGPLAN</a>(ACM Special
+          Interesting Group on Programming Languages)
+        </li>
+        <li>
+          <a href="http://lambda-the-ultimate.org/">Lambda the Ultimate</a>
+        </li>
+        <li><a href="http://homepages.cwi.nl/~atanasso/ref">PLT Online</a></li>
+        <li>
+          <a
+            href="http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mleone/web/language-research.html"
+            >Resources for Programming Language Research, CMU</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://www.hypernews.org/HyperNews/get/computing/lang-list.html"
+            >HyperNews Computing Languages List</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div id="footer">
+      <span>
+        <script language="JavaScript">
+          update = new Date(document.lastModified);
+          theMonth = update.getMonth() + 1;
+          theDate = update.getDate();
+          theYear = update.getYear();
+          document.writeln(
+            "Copyright &copy; 2008- YuZhang@USTC |$Last Update Date:" +
+              theYear +
+              "-" +
+              theMonth +
+              "-" +
+              theDate +
+              " $",
+          );
+        </script>
+      </span>
+    </div>
+
+    <script
+      src="http://www.google-analytics.com/urchin.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      _uacct = "UA-1546123-1";
+      urchinTracker();
+    </script>
+    <img align="absMiddle" id="IMG2" src="/cgi-bin/Count.cgi?df=tpl.dat" />
+    (Since Sep.13, 2008)
+  </body>
+</html>
